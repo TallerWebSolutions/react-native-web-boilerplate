@@ -1,0 +1,38 @@
+{
+  "name": "web",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "react": "16.12.0",
+    "react-art": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-native-web": "0.12.1",
+    "react-scripts": "3.3.1"
+  },
+  "scripts": {
+    "compile": "tsc -b",
+    "prestart": "npm run compile",
+    "start": "concurrently \"npm run compile -- -w --incremental\" \"npm run _start\"",
+    "_start": "react-app-rewired start",
+    "prebuild": "npm run compile",
+    "build": "react-app-rewired build",
+    "pretest": "npm run compile",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-plugin-react-native-web": "0.12.1",
+    "concurrently": "5.1.0",
+    "react-app-rewired": "2.1.5",
+    "typescript": "3.7.5"
+  }
+}
