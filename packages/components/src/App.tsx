@@ -12,6 +12,7 @@ import { ThemeProvider } from '@shopify/restyle';
 
 import { AppHeader } from './AppHeader';
 import { Button } from './Button';
+import { Card } from './Card';
 
 import theme from './theme';
 
@@ -52,6 +53,9 @@ export function App() {
                   onPress={() => {}}
                   label="Click here"
                 />
+
+                <Card variant="primary" />
+                {/* <Card variant="secondary" /> */}
               </View>
               <View style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>
