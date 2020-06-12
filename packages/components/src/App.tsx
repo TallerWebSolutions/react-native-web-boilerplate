@@ -11,7 +11,7 @@ import {
 import { ThemeProvider } from '@shopify/restyle';
 
 import { AppHeader } from './AppHeader'
-import Button from './Button';
+import { Button } from './Button';
 
 export function App() {
   return (
@@ -36,7 +36,7 @@ export function App() {
                 screen and then come back to see your edits (in the phone or the browser).
               </Text>
 
-              <Button labelProps={{color: '#fff'}} padding={10} borderRadius={5} backgroundColor="red" onPress={ () =>{}}label='Click here'/>
+              <Button title='Click me' padding={10} borderRadius={5} backgroundColor="red" onPress={ () =>{}}label='Click here'/>
 
             </View>
             <View style={styles.sectionContainer}>
