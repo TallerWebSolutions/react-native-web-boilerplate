@@ -12,7 +12,7 @@ import { ThemeProvider } from '@shopify/restyle';
 
 import { AppHeader } from './AppHeader';
 import { Button } from './Button';
-import { Card } from './Card';
+import { CardMedia } from './Card';
 
 import theme from './theme';
 
@@ -54,8 +54,7 @@ export function App() {
                   label="Click here"
                 />
 
-                <Card variant="primary" />
-                {/* <Card variant="secondary" /> */}
+                <CardMedia variant="primary" title="Taller" />
               </View>
               <View style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>

@@ -17,21 +17,21 @@ const palette = {
   white: '#fff',
   red: '#ff0000',
 
-  primary: {
-    deep: '#210D26',
-    dark: '#3A2041',
-    main: '#8B7696',
-    light: '#D2CEDE',
-    clear: '#E7E4F1',
-  },
+  // primary: {
+  //   deep: '#210D26',
+  //   dark: '#3A2041',
+  //   main: '#8B7696',
+  //   light: '#D2CEDE',
+  //   clear: '#E7E4F1',
+  // },
 
-  neutral: {
-    deep: '#292929',
-    dark: '#505050',
-    main: '#747474',
-    light: '#A9A9A9',
-    clear: '#EEEEEE',
-  },
+  // neutral: {
+  //   deep: '#292929',
+  //   dark: '#505050',
+  //   main: '#747474',
+  //   light: '#A9A9A9',
+  //   clear: '#EEEEEE',
+  // },
 };
 
 const theme = {
@@ -57,7 +57,6 @@ const theme = {
     },
     secondary: {
       // backgroundColor: 'primaryDeep,
-      // backgroundColor: palette.primary.deep,
     },
   },
 };
