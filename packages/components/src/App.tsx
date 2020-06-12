@@ -13,9 +13,11 @@ import { ThemeProvider } from '@shopify/restyle';
 import { AppHeader } from './AppHeader';
 import { Button } from './Button';
 
+import theme from './theme';
+
 export function App() {
   return (
-    <ThemeProvider theme={{}}>
+    <ThemeProvider theme={theme}>
       <>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView>
