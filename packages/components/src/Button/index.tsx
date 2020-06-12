@@ -1,5 +1,5 @@
-import React from 'react'
-import {TouchableOpacity, View, ButtonProps} from 'react-native';
+import React from 'react';
+import { TouchableOpacity, View, ButtonProps } from 'react-native';
 import {
   useRestyle,
   spacing,
@@ -10,7 +10,7 @@ import {
   BackgroundColorProps,
 } from '@shopify/restyle';
 
-import { Text } from '../Text'
+import { Text } from '../Text';
 
 const restyleFunctions = [spacing, border, backgroundColor];
 
@@ -22,13 +22,13 @@ type Props = ButtonProps &
     onPress: () => void;
   };
 
-export const Button: React.FC<Props> = ({onPress, label, ...rest}) => {
+export const Button: React.FC<Props> = ({ onPress, label, ...rest }) => {
   const props = useRestyle(restyleFunctions, rest);
 
   return (
     <TouchableOpacity onPress={onPress}>
       <View {...props}>
-        <Text color='#fff'>{label}</Text>
+        <Text color="#fff">{label}</Text>
       </View>
     </TouchableOpacity>
   );
