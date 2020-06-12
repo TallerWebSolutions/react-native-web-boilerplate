@@ -8,11 +8,15 @@ import {
   View,
 } from 'react-native';
 
+import { ThemeProvider } from '@shopify/restyle';
+
 import { AppHeader } from './AppHeader'
+import Button from './Button';
 
 export function App() {
   return (
-    <>
+    <ThemeProvider theme={{}}>
+<>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
@@ -31,16 +35,19 @@ export function App() {
                 Edit <Text style={styles.highlight}>packages/components/App.tsx</Text> to change this
                 screen and then come back to see your edits (in the phone or the browser).
               </Text>
+
+              <Button labelProps={{color: '#fff'}} padding={10} borderRadius={5} backgroundColor="red" onPress={ () =>{}}label='Click here'/>
+
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Web support via react-native-web</Text>
               <Text style={styles.sectionDescription}>
-                Run <Text style={styles.highlight}>yarn workspace web start</Text> to 
-                open this app in the browser. 
+                Run <Text style={styles.highlight}>yarn workspace web start</Text> to
+                open this app in the browser.
               </Text>
               <Text style={styles.sectionDescription}>
-                It will share the same code from mobile, unless you create platform-specific files 
-                using the <Text style={styles.highlight}>.web.tsx</Text> extension 
+                It will share the same code from mobile, unless you create platform-specific files
+                using the <Text style={styles.highlight}>.web.tsx</Text> extension
                 (also supports <Text style={styles.highlight}>.android</Text>,{' '}
                 <Text style={styles.highlight}>.ios</Text>,{' '}
                 <Text style={styles.highlight}>.native</Text>, etc).
@@ -50,6 +57,8 @@ export function App() {
         </ScrollView>
       </SafeAreaView>
     </>
+    </ThemeProvider>
+
   );
 };
 

@@ -1438,6 +1438,11 @@
   resolved "https://registry.npmjs.org/@react-native-community/eslint-plugin/-/eslint-plugin-1.0.0.tgz#ae9a430f2c5795debca491f15a989fce86ea75a0"
   integrity sha512-GLhSN8dRt4lpixPQh+8prSCy6PYk/MT/mvji/ojAd5yshowDo6HFsimCSTD/uWAdjpUq91XK9tVdTNWfGRlKQA==
 
+"@shopify/restyle@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@shopify/restyle/-/restyle-1.0.4.tgz#164b160c53741dfbedffa6ccc67d6680f641d9a7"
+  integrity sha512-vfeAiNKWryNZ2OxIWzRt4iE+fFeMBp4xE7VZwRJI6wnf4wHgjx2IX1sKEvL9rQx2ztIuqfIbR1p/d5XzhEU6Tw==
+
 "@sinonjs/commons@^1.7.0":
   version "1.7.0"
   resolved "https://registry.npmjs.org/@sinonjs/commons/-/commons-1.7.0.tgz#f90ffc52a2e519f018b13b6c4da03cbff36ebed6"
