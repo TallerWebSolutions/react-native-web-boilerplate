@@ -28,7 +28,7 @@ export const Button: React.FC<Props> = ({ onPress, label, ...rest }) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View {...props}>
-        <Text color="#fff">{label}</Text>
+        <Text>{label}</Text>
       </View>
     </TouchableOpacity>
   );

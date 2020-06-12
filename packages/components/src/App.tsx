@@ -46,7 +46,7 @@ export function App() {
 
                 <Button
                   title="Click me"
-                  padding={10}
+                  padding="s"
                   borderRadius={5}
                   backgroundColor="red"
                   onPress={() => {}}
