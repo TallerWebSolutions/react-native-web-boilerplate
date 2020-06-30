@@ -12,7 +12,6 @@ import { ThemeProvider } from '@shopify/restyle';
 
 import { AppHeader } from './AppHeader';
 import { Button } from './Button';
-import { CardMedia } from './Card';
 
 import theme from './theme';
 
@@ -53,8 +52,6 @@ export function App() {
                   onPress={() => {}}
                   label="Click here"
                 />
-
-                <CardMedia variant="primary" title="Taller" />
               </View>
               <View style={styles.sectionContainer}>
                 <Text style={styles.sectionTitle}>
