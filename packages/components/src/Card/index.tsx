@@ -1,15 +1,15 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, View, Text, Image } from 'react-native';
+import { Image } from 'react-native';
 import {
   createVariant,
   createRestyleComponent,
   VariantProps,
   createBox,
+  createText,
 } from '@shopify/restyle';
 
-import theme, { Theme } from '../theme';
-import scale from 'core/src/scale';
-import { color } from '@shopify/restyle';
+import { Theme } from '../theme';
+import styles from './styles';
 
 const variant = createVariant<Theme>({
   themeKey: 'cardVariants',
@@ -18,45 +18,53 @@ const variant = createVariant<Theme>({
       phone: 's',
       tablet: 'm',
     },
-    backgroundColor: 'white',
   },
 });
 
 const Box = createBox<Theme>();
+const Text = createText<Theme>();
 
-const CardBasic = createRestyleComponent<
-  VariantProps<Theme, 'cardVariants'> & React.ComponentProps<typeof Box>
->([variant]);
+export type Props = {
+  id: string;
+  title: string;
+  subtitle: string;
+  imageSource: string;
+};
 
-type Props = { title: string };
+type BasicCardProps = VariantProps<Theme, 'cardVariants'> &
+  React.ComponentProps<typeof Box>;
+
+const CardBasic = createRestyleComponent<BasicCardProps>([variant]);
 
 type CardMediaProps = VariantProps<Theme, 'cardVariants'> & Props;
 
-const CardMedia: React.FC<CardMediaProps> = ({ variant, title }) => {
+const CardMedia: React.FC<CardMediaProps> = ({
+  variant = 'primary',
+  title,
+  subtitle,
+  id,
+  imageSource,
+}) => {
   return (
-    <CardBasic
-      variant={variant}
-      borderWidth={1}
-      borderColor="black"
-      shadowColor="black"
-      shadowOpacity={0.4}
-      shadowRadius={scale(15)}
-      elevation={10}
-      borderRadius={10}>
-      <Text>{title}</Text>
+    <CardBasic variant={variant}>
+      <Box padding="l" flexDirection="row" style={styles.box}>
+        <Image style={styles.image} source={{ uri: imageSource }} />
+        <Box paddingLeft="l">
+          <Text
+            style={styles.title}
+            marginBottom="s"
+            fontSize={30}
+            color="primaryDark"
+            numberOfLines={1}>
+            {title}
+          </Text>
+          <Text color="primaryMain" fontSize={18}>
+            {subtitle}
+          </Text>
+        </Box>
+      </Box>
     </CardBasic>
   );
 };
-
-const styles = StyleSheet.create({
-  wrapper: {
-    shadowColor: '#000000',
-    shadowOpacity: 0.4,
-    shadowRadius: scale(15),
-    elevation: 10,
-    borderRadius: 10,
-  },
-  title: { color: 'blue' },
-});
 
 export { CardBasic, CardMedia };
