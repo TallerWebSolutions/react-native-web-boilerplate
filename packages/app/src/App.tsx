@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, SafeAreaView } from 'react-native';
+import { ThemeProvider } from '@shopify/restyle';
 
-import Card from './Card';
+import theme from 'components/src/theme';
+import { CardMedia, Props } from 'components/src/Card';
+import { Title } from 'components/src/Title';
 import { users as mock } from './mocked';
-import { PropsCards } from './Card';
 
 type User = {
   avatar_url: string;
@@ -23,7 +25,7 @@ const tallerUserList = [
   'marcosvlehmkuhl',
 ];
 
-const normalizeUsers = (users: User[]): PropsCards[] =>
+const normalizeUsers = (users: User[]): Props[] =>
   users.map(user => ({
     id: user.login,
     subtitle: user.login,
@@ -52,10 +54,15 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <FlatList<PropsCards>
-      data={normalizeUsers(userList)}
-      renderItem={({ item }) => <Card {...item} />}
-      keyExtractor={({ id }) => id}
-    />
+    <ThemeProvider theme={theme}>
+      <SafeAreaView>
+        <Title>Talleres profile</Title>
+        <FlatList<Props>
+          data={normalizeUsers(userList)}
+          renderItem={({ item }) => <CardMedia {...item} />}
+          keyExtractor={({ id }) => id}
+        />
+      </SafeAreaView>
+    </ThemeProvider>
   );
 };
