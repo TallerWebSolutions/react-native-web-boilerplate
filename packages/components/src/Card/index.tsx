@@ -47,7 +47,7 @@ const CardMedia: React.FC<CardMediaProps> = ({
 }) => {
   return (
     <CardBasic variant={variant}>
-      <Box padding="l" flexDirection="row" style={styles.box}>
+      <Box padding="l" flexDirection="row">
         <Image style={styles.image} source={{ uri: imageSource }} />
         <Box paddingLeft="l">
           <Text
