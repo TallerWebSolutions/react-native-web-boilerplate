@@ -6,26 +6,9 @@ import { getCurrentTalleres } from 'core/src/services/talleres-service';
 import theme from 'components/src/theme';
 import { CardMedia, Props } from 'components/src/Card';
 import { Title } from 'components/src/Title';
+import { Tallerer } from 'core/src/types/tallerer';
 
-type User = {
-  avatar_url: string;
-  name: string;
-  login: string;
-};
-
-const tallerUserList = [
-  'dersonsena',
-  'arthuralmeidap',
-  'alyoshas',
-  'lhguerra',
-  'guilhermedeoliveira',
-  'selhar',
-  'delete',
-  'rrmontuan',
-  'marcosvlehmkuhl',
-];
-
-const normalizeUsers = (users: User[]): Props[] =>
+const normalizeUsers = (users: Tallerer[]): Props[] =>
   users.map(user => ({
     id: user.login,
     subtitle: user.login,
@@ -34,23 +17,10 @@ const normalizeUsers = (users: User[]): Props[] =>
   }));
 
 export const App: React.FC = () => {
-  const apiUrl = 'https://api.github.com';
-  const [userList, setUserList] = useState<User[]>([]);
+  const [userList, setUserList] = useState<Tallerer[]>([]);
 
   useEffect(() => {
-    const getUser = async () => {
-      const promises = tallerUserList.map(async username =>
-        (await fetch(apiUrl + `/users/${username}`)).json(),
-      );
-
-      try {
-        setUserList(await Promise.all(promises));
-      } catch (error) {
-        setUserList((await getCurrentTalleres()) as User[]);
-      }
-    };
-
-    getUser();
+    getCurrentTalleres().then(setUserList);
   }, []);
 
   return (
