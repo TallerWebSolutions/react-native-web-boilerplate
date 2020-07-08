@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { FlatList, SafeAreaView } from 'react-native';
 import { ThemeProvider } from '@shopify/restyle';
 
+import { getCurrentTalleres } from 'core/src/services/talleres-service';
 import theme from 'components/src/theme';
 import { CardMedia, Props } from 'components/src/Card';
 import { Title } from 'components/src/Title';
-import { users as mock } from './mocked';
 
 type User = {
   avatar_url: string;
@@ -46,7 +46,7 @@ export const App: React.FC = () => {
       try {
         setUserList(await Promise.all(promises));
       } catch (error) {
-        setUserList(mock as User[]);
+        setUserList((await getCurrentTalleres()) as User[]);
       }
     };
 
