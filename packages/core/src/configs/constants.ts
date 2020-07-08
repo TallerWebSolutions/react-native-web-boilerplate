@@ -10,4 +10,8 @@ export const CURRENT_TALLERES = [
   'delete',
   'rrmontuan',
   'marcosvlehmkuhl',
+  'celsoMartins',
+  'rafaelcaceres',
+  'sebas5384',
+  'wlsf82',
 ];
