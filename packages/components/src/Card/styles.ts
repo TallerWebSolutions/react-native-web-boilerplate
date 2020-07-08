@@ -1,5 +1,5 @@
 import { StyleSheet, Platform } from 'react-native';
-import scale from 'core/src/scale';
+import scale from 'core/src/utils/scale';
 
 export default StyleSheet.create({
   image: {
