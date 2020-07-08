@@ -4,11 +4,11 @@ import {
   createVariant,
   createRestyleComponent,
   VariantProps,
-  createBox,
-  createText,
 } from '@shopify/restyle';
 
 import { Theme } from '../theme';
+import { Box } from '../Box';
+import { Text } from '../Text';
 import styles from './styles';
 
 const variant = createVariant<Theme>({
@@ -20,9 +20,6 @@ const variant = createVariant<Theme>({
     },
   },
 });
-
-const Box = createBox<Theme>();
-const Text = createText<Theme>();
 
 export type Props = {
   id: string;

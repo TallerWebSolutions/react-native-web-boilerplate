@@ -6,7 +6,7 @@ import { Theme } from '../theme';
 const Text = createText<Theme>();
 
 export const Title: React.FC = ({ children }) => (
-  <Text fontSize={32} color="primaryDeep" fontWeight="bold" margin="l">
+  <Text fontSize={28} color="primaryDeep" fontWeight="bold" margin="l">
     {children}
   </Text>
 );
